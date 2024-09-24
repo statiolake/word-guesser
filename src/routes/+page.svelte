@@ -69,6 +69,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Word Guesser</title>
+</svelte:head>
+
 <div
 	class="flex items-center justify-center min-h-screen transition-colors duration-300 {getBackgroundColor(
 		matchStatus
