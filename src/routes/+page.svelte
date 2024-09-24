@@ -1,22 +1,10 @@
 <script lang="ts">
 	import Confetti from '$lib/components/Confetti.svelte';
 	import Input from '$lib/components/Input.svelte';
+	import { words } from '$lib/words';
 	import { CheckCircle2, XCircle } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import { fade, scale } from 'svelte/transition';
-
-	const words: string[] = [
-		'javascript',
-		'react',
-		'component',
-		'function',
-		'state',
-		'effect',
-		'props',
-		'hook',
-		'context',
-		'reducer'
-	];
 
 	let targetWord: string = '';
 	let guess: string = '';
@@ -28,6 +16,7 @@
 
 	function startNewGame(): void {
 		targetWord = words[Math.floor(Math.random() * words.length)];
+		console.log(`targetWord: ${targetWord}`);
 		guess = '';
 		matchStatus = null;
 		gameOver = false;
